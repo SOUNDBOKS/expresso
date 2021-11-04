@@ -1,0 +1,21 @@
+{
+  "name": "@soundboks/expresso",
+  "version": "0.1.0",
+  "repository": "https://github.com/soundboks/expresso",
+  "author": "mark@soundboks.com",
+  "license": "MIT",
+  "main": "build/index.js",
+  "dependencies": {
+    "@soundboks/async-local-context": "^0.1.0",
+    "@types/express": "^4.17.13",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.4.4"
+  },
+  "scripts": {
+    "pre-release": "yarn tsc",
+    "release:github": "yarn pre-release && yarn publish --registry=https://npm.pkg.github.com --no-git-tag-version",
+    "release:npm": "yarn pre-release && yarn publish --no-git-tag-version --access public"
+  }
+}
